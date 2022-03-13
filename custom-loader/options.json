@@ -1,0 +1,17 @@
+{
+  "title": "Custom Loader options",
+  "type": "object",
+  "properties": {
+    "value": {
+      "description": "`value` 必须为 string 类型",
+      "type": "string"
+    },
+    "count": {
+      "description": "`count` 必须为 number 类型",
+      "type": "number"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
