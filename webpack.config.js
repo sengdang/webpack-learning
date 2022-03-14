@@ -7,8 +7,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const { DefinePlugin } = require("webpack")
 
+const __DEV__ = process.env.NODE_ENV === "development"
+
 module.exports = {
-  mode: "development",
   entry: path.resolve(__dirname, "./src/main.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -23,7 +24,7 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          __DEV__ ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "sass-loader",
