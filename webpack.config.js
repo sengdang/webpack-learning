@@ -13,7 +13,7 @@ module.exports = {
   entry: path.resolve(__dirname, "./src/main.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].js"
+    filename: "js/[name].[chunkhash:8].js"
   },
   module: {
     rules: [
@@ -58,7 +58,7 @@ module.exports = {
       title: "Webpack Learning"
     }),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[hash:8].css"
+      filename: "css/[name].[contenthash:8].css"
     }),
     new VueLoaderPlugin(),
     new DefinePlugin({
